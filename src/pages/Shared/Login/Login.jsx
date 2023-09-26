@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+
+  const {signIn} = useContext(AuthContext)
   const {
     register,
     handleSubmit,
@@ -9,7 +15,24 @@ const Login = () => {
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
-    console.log( email, password);
+    signIn(email, password)
+    .then(result =>{
+     const user = result.user;
+    console.log(user)
+     if(user){
+      Swal.fire(
+        'Thank you!',
+        'Log in successfully',
+        'success'
+      )
+     }
+    })
+    .then(err=>{
+      if(err){
+        Swal.fire('Unable to Log in',
+        'Please check your Email & password.',
+        'warning')}
+    })
   };
   return (
     <div className="card w-96 glass my-7 mx-auto bg-[#237A57]">
@@ -41,7 +64,7 @@ const Login = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="password"
               {...register("password", { required: true })}
               className="input input-bordered input-info w-full max-w-xs space-y-8"
             />
@@ -54,6 +77,9 @@ const Login = () => {
             </input>
           </div>
         </form>
+        <div className="text-white mt-1">
+          <span >New to leafy universe? <Link className="text-info" to='/register'>Create an Account.</Link></span> 
+        </div>
       </div>
     </div>
   );

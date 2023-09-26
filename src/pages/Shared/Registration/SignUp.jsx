@@ -1,14 +1,36 @@
-
-
+import Swal from 'sweetalert2'
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
+  const {createUser} = useContext(AuthContext)
     const { register, handleSubmit ,   formState: { errors },} = useForm()
     const onSubmit = (data) => {
         const name = data.name;
         const email = data.email;
         const password = data.password;
-        console.log(name, email, password)
+        // console.log( email, password)
+        createUser(email, password ,name )
+      .then(result=>{
+        const user = result.user;
+       if(user){
+        Swal.fire(
+          'Welcome!',
+          'Account create successfully',
+          'success'
+        )
+       }
+        
+      })
+      .catch(err=>{
+       if(err){
+        Swal.fire('Warning',
+        'Something went wrong! Please try again.',
+        'warning')
+       }
+      })
     }
   
 
@@ -76,6 +98,9 @@ const SignUp = () => {
             />
           </div>
         </form>
+        <div className="text-white mt-1">
+          <span >Already have an account? <Link className="text-info" to='/login'>Sign in</Link></span> 
+        </div>
       </div>
     </div>
   );

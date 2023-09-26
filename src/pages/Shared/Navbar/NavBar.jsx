@@ -20,9 +20,9 @@ const NavBar = () => {
              {navItems}
             </ul>
           </div>
-          <img className="max-h-14 hidden lg:flex"  src={logo} alt="" />
+          <img className="max-h-14 hidden lg:flex md:flex"  src={logo} alt="" />
         </div>
-        <img className="max-h-14 navbar-end lg:hidden"  src={logo} alt="" />
+        <img className="max-h-14 navbar-end lg:hidden md:hidden"  src={logo} alt="" />
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {navItems}

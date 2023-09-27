@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const TreeDetails = () => {
   const trees = useLoaderData();
@@ -18,11 +18,14 @@ const TreeDetails = () => {
             <li>Age: {age}</li>
             <li>Height: {height}</li>
             <li>Health: {health}</li>
-            <li>Health:price: {price}</li>
+            <li>price: {price}</li>
         </ul>
         <p><small>{details}</small></p>
+     
         <div className="card-actions justify-end">
+            <button className="btn btn-secondary"><Link to="/">Back to home</Link></button>
           <button className="btn btn-primary">Buy Now</button>
+          
         </div>
       </div>
     </div>

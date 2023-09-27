@@ -23,7 +23,7 @@ const NavBar = () => {
         <Link to='/'>Home</Link>
       </button>
       <button className="mx-4 text-lg font-mono font-semibold cursor-pointer">
-        Trees
+       <Link to="trees">Trees</Link>
       </button>
       <button className="mx-4 text-lg font-mono font-semibold cursor-pointer">
         Add Trees

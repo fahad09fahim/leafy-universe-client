@@ -5,6 +5,8 @@ import SignUp from "../pages/Shared/Registration/SignUp";
 import Home from "../pages/Home/Home/Home";
 import TreeDetails from "../pages/Trees/TreeDetails";
 import Trees from "../pages/Trees/Trees";
+import TreeStateProvider from "../providers/TreeStateProvider";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +15,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
-        loader:()=>fetch('https://leafy-universe-server-pikk9fpwt-fahad09fahim.vercel.app/trees')
+        element: <TreeStateProvider><Home/></TreeStateProvider>,
+       
       },
       {
         path: "login",
@@ -26,12 +28,12 @@ const router = createBrowserRouter([
       },
       {
         path:"trees",
-        element:<Trees/>
+        element:<TreeStateProvider><Trees/></TreeStateProvider>
       },
       {
         path:"/trees/:id",
-        element:<TreeDetails/>,
-        loader: ({params})=>fetch(`https://leafy-universe-server-pikk9fpwt-fahad09fahim.vercel.app/trees/${params.id}`)
+        element:<PrivateRoute><TreeDetails/></PrivateRoute>,
+        loader: ({params})=>fetch(`https://leafy-universe-server-kw80gqmqk-fahad09fahim.vercel.app/trees/${params.id}`)
       }
     ],
   },

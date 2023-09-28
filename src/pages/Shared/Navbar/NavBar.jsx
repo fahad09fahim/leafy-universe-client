@@ -4,6 +4,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -19,24 +20,25 @@ const NavBar = () => {
   };
   const navItems = (
     <>
-      <button className="mx-4 text-lg font-mono font-semibold cursor-pointer">
+      <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
         <Link to='/'>Home</Link>
       </button>
-      <button className="mx-4 text-lg font-mono font-semibold cursor-pointer">
+     
+      <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
        <Link to="trees">Trees</Link>
       </button>
-      <button className="mx-4 text-lg font-mono font-semibold cursor-pointer">
+      <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
         Add Trees
       </button>
       {user ? (
         <button
           onClick={handleLogOut}
-          className="mx-4 text-lg font-mono font-semibold cursor-pointer"
+          className=" btn btn-accent  font-mono m-2 my font-semibold   "
         >
           Log out
         </button>
       ) : (
-        <button className="mx-4 text-lg font-mono font-semibold cursor-pointer">
+        <button className="btn btn-accent  font-mono m-2 my font-semibold   ">
           <Link to="login">Log in</Link>
         </button>
       )}
@@ -64,7 +66,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+            className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
           >
             {navItems}
           </ul>

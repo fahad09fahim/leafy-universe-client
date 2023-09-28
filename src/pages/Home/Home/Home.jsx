@@ -1,10 +1,13 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Banner from "../Banner/Banner";
 import TreeCard from "../../Trees/TreeCard";
+import { useContext } from "react";
+import { TreeContext } from "../../../providers/TreeStateProvider";
+
 
 const Home = () => {
-    const trees = useLoaderData()
+    const trees = useContext(TreeContext)
     const limitedTrees = trees.slice(0,6)
     return (
         <div>

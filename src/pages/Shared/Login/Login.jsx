@@ -5,42 +5,42 @@ import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-// send user email and pass to authentication
-  const {signIn} = useContext(AuthContext)
+  // send user email and pass to authentication
+  const { signIn } = useContext(AuthContext);
 
-// ----------------
-const location = useLocation();
-const navigate = useNavigate()
-const from = location.state?.from?.pathname || "/"
-// ----------------
+  // ----------------
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+  // ----------------
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  // submit form data
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
     signIn(email, password)
-    .then(result =>{
-     const user = result.user;
-    
-     if(user){
-      Swal.fire(
-        'Thank you!',
-        'Log in successfully',
-        'success'
-      )
-      navigate(from, { replace: true })
-     }
-    })
-    .catch(err=>{
-      console.log(err.message)
-      if(err.message === "Firebase: Error (auth/invalid-login-credentials)."){
-        Swal.fire('Unable to Log in',
-        'Invalid Email & password',
-        'warning')}
-    })
+      .then((result) => {
+        const user = result.user;
+
+        // notification
+        if (user) {
+          Swal.fire("Thank you!", "Log in successfully", "success");
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+        if (
+          err.message === "Firebase: Error (auth/invalid-login-credentials)."
+        ) {
+          Swal.fire("Unable to Log in", "Invalid Email & password", "warning");
+        }
+      });
     // if(err.message ==="")
   };
   return (
@@ -57,14 +57,12 @@ const from = location.state?.from?.pathname || "/"
               type="text"
               {...register("email", {
                 required: true,
-               
               })}
               className="input input-bordered input-info w-full max-w-xs space-y-8"
             />
             {errors.email && (
               <span className="text-red-600">Email required</span>
             )}
-           
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -82,12 +80,20 @@ const from = location.state?.from?.pathname || "/"
             )}
           </div>
           <div className="card-actions justify-center mt-5">
-            <input type="submit" value="login" className="btn btn-secondary border-x-cyan-950">
-            </input>
+            <input
+              type="submit"
+              value="login"
+              className="btn btn-secondary border-x-cyan-950"
+            ></input>
           </div>
         </form>
         <div className="text-white mt-1">
-          <span >New to leafy universe? <Link className="text-info" to='/register'>Create an Account.</Link></span> 
+          <span>
+            New to leafy universe?{" "}
+            <Link className="text-info" to="/register">
+              Create an Account.
+            </Link>
+          </span>
         </div>
       </div>
     </div>

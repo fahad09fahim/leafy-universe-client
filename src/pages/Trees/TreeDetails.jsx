@@ -23,7 +23,7 @@ const TreeDetails = () => {
         <p><small>{details}</small></p>
      
         <div className="card-actions justify-end">
-            <button className="btn btn-secondary"><Link to="/">Back to home</Link></button>
+          <Link className="btn btn-secondary" to="/">Back to home</Link>
           <button className="btn btn-primary">Buy Now</button>
           
         </div>

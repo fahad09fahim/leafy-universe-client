@@ -20,27 +20,30 @@ const NavBar = () => {
   };
   const navItems = (
     <>
-      <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
-        <Link to='/'>Home</Link>
-      </button>
+ 
+        <Link className=" btn btn-accent  font-mono m-2 my font-semibold   " to='/'>Home</Link>
+  
      
-      <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
-       <Link to="trees">Trees</Link>
-      </button>
-      <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
+   
+       <Link to="trees" className=" btn btn-accent  font-mono m-2 my font-semibold   ">Trees</Link>
+ 
+      
+      {user ? <>
+        
+          <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
         Add Trees
       </button>
-      {user ? (
         <button
           onClick={handleLogOut}
           className=" btn btn-accent  font-mono m-2 my font-semibold   "
         >
           Log out
         </button>
-      ) : (
-        <button className="btn btn-accent  font-mono m-2 my font-semibold   ">
-          <Link to="login">Log in</Link>
-        </button>
+      
+      </>: (
+  
+          <Link className="btn btn-accent  font-mono m-2 my font-semibold" to="login">Log in</Link>
+  
       )}
     </>
   );

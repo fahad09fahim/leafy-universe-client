@@ -7,6 +7,7 @@ import TreeDetails from "../pages/Trees/TreeDetails";
 import Trees from "../pages/Trees/Trees";
 import TreeStateProvider from "../providers/TreeStateProvider";
 import PrivateRoute from "./PrivateRoute";
+import AddTree from "../pages/Shared/Add Tree/AddTree";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path:"/trees/:id",
         element:<PrivateRoute><TreeDetails/></PrivateRoute>,
         loader: ({params})=>fetch(`http://localhost:5000/trees/${params.id}`)
+      },
+      {
+        path:"addTree",
+        element:<AddTree/>
       }
     ],
   },

@@ -30,9 +30,9 @@ const NavBar = () => {
       
       {user ? <>
         
-          <button className=" btn btn-accent  font-mono m-2 my font-semibold   ">
+          <Link to='addTree' className=" btn btn-accent  font-mono m-2 my font-semibold   ">
         Add Trees
-      </button>
+      </Link>
         <button
           onClick={handleLogOut}
           className=" btn btn-accent  font-mono m-2 my font-semibold   "

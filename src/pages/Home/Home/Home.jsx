@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { TreeContext } from "../../../providers/TreeStateProvider";
 import { BiSolidRightArrow } from "react-icons/bi";
 import About from "../../Shared/About Us/About";
+import Footer from "../../Shared/Footer/Footer";
 
 const Home = () => {
   const trees = useContext(TreeContext);
@@ -32,6 +33,8 @@ const Home = () => {
       </div>
       {/* -----------about us----------- */}
       <About/>
+      {/* ----------footer--------- */}
+      <Footer/>
     </div>
   );
 };

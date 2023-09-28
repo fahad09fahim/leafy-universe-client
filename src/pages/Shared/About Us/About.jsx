@@ -2,14 +2,10 @@ import img from "../../../assets/about.png";
 
 const About = () => {
   return (
-    <div
-      className="hero min-h-fit bg-base-100 shadow-lg mx-auto"
-      data-aos="fade-up"
-     data-aos-duration="3000"
-    >
-      <div className="hero-content flex-col lg:flex-row">
+    <div className="hero min-h-fit bg-base-100 shadow-lg mx-auto mt-5">
+      <div className="hero-content flex-col lg:flex-row" data-aos="fade-left">
         <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
-        <div>
+        <div data-aos="fade-right">
           <h1 className="text-5xl text-center font-bold">About Us</h1>
           <p className="py-6 text-xl">
             At Leafy Universe, our love for trees runs deep. We believe in the

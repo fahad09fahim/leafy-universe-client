@@ -6,7 +6,7 @@ const TreeStateProvider = ({children}) => {
 
 
   useEffect(() => {
-    fetch("https://leafy-universe-server-kw80gqmqk-fahad09fahim.vercel.app/trees")
+    fetch("http://localhost:5000/trees")
       .then((res) => res.json())
       .then((data) => setTrees(data));
   }, [trees]);

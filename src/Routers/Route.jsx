@@ -8,6 +8,7 @@ import Trees from "../pages/Trees/Trees";
 import TreeStateProvider from "../providers/TreeStateProvider";
 import PrivateRoute from "./PrivateRoute";
 import AddTree from "../pages/Shared/Add Tree/AddTree";
+import NotFound from './../Layout/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path:"*",
+    element:<NotFound/>
+  }
 ]);
 
 export default router;

@@ -13,13 +13,9 @@ const Login = () => {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
   // ----------------
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   // submit form data
+  const { register,handleSubmit, formState: { errors },} = useForm();
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;

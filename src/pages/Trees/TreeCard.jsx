@@ -5,9 +5,10 @@ const TreeCard = ({ tree }) => {
   const {_id, name, image ,age,price } = tree;
   return (
 
-      <div className="card  w-auto bg-base-100 shadow-xl" data-aos="zoom-in">
+      <div className="card   bg-base-100 shadow-xl" data-aos="zoom-in">
         <figure>
           <img
+          className="h-[400px] w-[300]"
             src={image}
             alt="Shoes"
           />

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const AddTree = () => {
   const { user } = useContext(AuthContext);
 const navigate = useNavigate()
-  // http://localhost:5000/trees
+  // https://leafy-universe-server.vercel.app/trees
   const { register, handleSubmit } = useForm();
   const onSubmit = (form) => {
     const name= form.name;
@@ -20,7 +20,7 @@ const navigate = useNavigate()
     const email = form.email;
     const addTrees = {name,age,height,health,price,image,details,email}
     // console.log(addTrees);
-    fetch("http://localhost:5000/trees",{
+    fetch("https://leafy-universe-server.vercel.app/trees",{
         method:'POST',
         headers: {
           "content-type": "application/json"

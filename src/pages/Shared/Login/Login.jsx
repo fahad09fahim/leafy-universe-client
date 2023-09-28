@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Social from "../Social/Social";
 
 const Login = () => {
   // send user email and pass to authentication
@@ -91,6 +92,7 @@ const Login = () => {
             </Link>
           </span>
         </div>
+        <Social/>
       </div>
     </div>
   );

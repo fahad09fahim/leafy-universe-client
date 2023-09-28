@@ -3,12 +3,13 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
+import Social from "../Social/Social";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
 
   // -------------
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // -------------
   const {
     register,
@@ -25,7 +26,7 @@ const SignUp = () => {
         const user = result.user;
         if (user) {
           Swal.fire("Welcome!", "Account create successfully", "success");
-          navigate("/trees")
+          navigate("/trees");
         }
       })
       .catch((err) => {
@@ -125,6 +126,7 @@ const SignUp = () => {
             </Link>
           </span>
         </div>
+        <Social />
       </div>
     </div>
   );

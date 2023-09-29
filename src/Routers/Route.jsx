@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddTree from "../pages/Shared/Add Tree/AddTree";
 import NotFound from './../Layout/NotFound';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,13 +35,14 @@ const router = createBrowserRouter([
       },
       {
         path:"/trees/:id",
-        element:<PrivateRoute><TreeDetails/></PrivateRoute>,
-        loader: ({params})=>fetch(`https://leafy-universe-server.vercel.app/trees/${params.id}`)
+        element:<TreeDetails/>,
+        loader: ({params})=>fetch(`http://localhost:5000/trees/${params.id}`)
       },
       {
         path:"addTree",
-        element:<AddTree/>
+        element:<PrivateRoute><AddTree/></PrivateRoute>
       }
+    
     ],
   },
   {

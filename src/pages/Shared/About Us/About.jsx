@@ -3,9 +3,9 @@ import img from "../../../assets/about.png";
 const About = () => {
   return (
     <div className="hero min-h-fit bg-base-100 shadow-lg mx-auto mt-5">
-      <div className="hero-content flex-col lg:flex-row" data-aos="fade-left">
-        <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
-        <div data-aos="fade-right">
+      <div className="hero-content flex-col lg:flex-row">
+        <img src={img} className=" rounded-lg shadow-2xl" />
+        <div>
           <h1 className="text-5xl text-center font-bold">About Us</h1>
           <p className="py-6 text-xl">
             At Leafy Universe, our love for trees runs deep. We believe in the

@@ -24,6 +24,7 @@ const SignUp = () => {
     createUser(email, password, name)
       .then((result) => {
         const user = result.user;
+        // console.log(user)
         if (user) {
           Swal.fire("Welcome!", "Account create successfully", "success");
           navigate("/trees");

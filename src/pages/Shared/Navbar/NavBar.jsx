@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import logo from "../../../assets/logo-1.svg";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleLogOut = () => {
     logOut()
+     navigate('/')
     Swal.fire({
       position: 'center',
       icon: 'success',

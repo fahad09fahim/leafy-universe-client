@@ -47,6 +47,7 @@ const navigate = useNavigate()
                 <span className="label-text">Name</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("name")}
                 className="input input-bordered"
@@ -57,6 +58,7 @@ const navigate = useNavigate()
                 <span className="label-text">Age</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("age")}
                 className="input input-bordered"
@@ -67,6 +69,7 @@ const navigate = useNavigate()
                 <span className="label-text">Height</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("height")}
                
@@ -78,6 +81,7 @@ const navigate = useNavigate()
                 <span className="label-text">Health</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("health")}
                 className="input input-bordered"
@@ -88,9 +92,10 @@ const navigate = useNavigate()
                 <span className="label-text">price</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("price")}
-                defaultValue={"$"}
+               placeholder="$"
                 className="input input-bordered"
               />
             </div>
@@ -99,6 +104,7 @@ const navigate = useNavigate()
                 <span className="label-text">Image Url</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("image")}
                 placeholder="url"
@@ -110,6 +116,7 @@ const navigate = useNavigate()
                 <span className="label-text">Details</span>
               </label>
               <input
+              required
                 type="text"
                 {...register("details")}
                 className="input input-bordered"
@@ -120,6 +127,8 @@ const navigate = useNavigate()
                 <span className="label-text">Email</span>
               </label>
               <input
+              required
+
                 type="text"
                 defaultValue={user?.email}
                 {...register("email")}

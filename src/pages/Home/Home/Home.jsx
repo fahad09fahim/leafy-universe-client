@@ -7,8 +7,10 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import About from "../../Shared/About Us/About";
 import Footer from "../../Shared/Footer/Footer";
 
+
 const Home = () => {
   const trees = useContext(TreeContext);
+  
   const limitedTrees = trees.slice(0, 6);
 
   return (

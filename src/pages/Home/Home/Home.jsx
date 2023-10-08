@@ -9,7 +9,7 @@ import Footer from "../../Shared/Footer/Footer";
 
 
 const Home = () => {
-  const trees = useContext(TreeContext);
+  const {trees} = useContext(TreeContext);
   
   const limitedTrees = trees.slice(0, 6);
 

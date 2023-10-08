@@ -3,27 +3,31 @@ import  { createContext, useEffect, useState } from "react";
  export const TreeContext = createContext();
 const TreeStateProvider = ({children}) => {
     const [trees, setTrees] = useState([]);
-  
+    const [loading, setLoading] = useState(true)
 
 
 
   useEffect(() => {
-    fetch("https://leafy-universe-server-etmczqdyv-fahad09fahim.vercel.app/trees")
+    fetch("https://leafy-universe-server.onrender.com/trees")
       .then((res) => res.json())
       .then((data) =>{
     if(data){
        setTrees(data)
+       setLoading(false)
     }
        
       } );
   }, []);
-    
-  if(trees){
-    return (
-    <>
-      <TreeContext.Provider value={trees}>{children}</TreeContext.Provider>
-    </>  );
+  
+ const  data = {
+    trees,
+    loading
   }
+    
+
+    return <TreeContext.Provider value={data}>{children}</TreeContext.Provider>
+
+
   
 
 };

@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path:"/trees/:id",
         element:<PrivateRoute><TreeDetails/></PrivateRoute>,
-        loader: ({params})=>fetch(`https://leafy-universe-server-etmczqdyv-fahad09fahim.vercel.app/trees/${params.id}`)
+        loader: ({params})=>fetch(`https://leafy-universe-server.onrender.com/trees/${params.id}`)
       },
       {
         path:"addTree",

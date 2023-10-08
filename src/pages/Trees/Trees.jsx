@@ -5,7 +5,7 @@ import { TreeContext } from "../../providers/TreeStateProvider";
 
 
 const Trees = () => {
-const trees = useContext(TreeContext)  
+const{ trees }= useContext(TreeContext)  
   return (
     <div className="my-7 p-11">
           <h1 className="text-4xl text-center">

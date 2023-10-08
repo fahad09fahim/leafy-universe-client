@@ -21,7 +21,7 @@ const TreeDetails = () => {
        const quantity = form.quantity;
        const orderData = {name, phoneNum, address, email ,treeName,quantity}
       //  console.log(orderData)
-      fetch("https://leafy-universe-server-etmczqdyv-fahad09fahim.vercel.app/orders",{
+      fetch("https://leafy-universe-server.onrender.com/orders",{
         method: "POST",
         headers:{
           "content-type": "application/json"

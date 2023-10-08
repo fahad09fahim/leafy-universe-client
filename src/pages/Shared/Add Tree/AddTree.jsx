@@ -20,7 +20,7 @@ const navigate = useNavigate()
     const email = form.email;
     const addTrees = {name,age,height,health,price,image,details,email}
     // console.log(addTrees);
-    fetch("https://leafy-universe-server.vercel.app/trees",{
+    fetch("https://leafy-universe-server.onrender.com/",{
         method:'POST',
         headers: {
           "content-type": "application/json"
